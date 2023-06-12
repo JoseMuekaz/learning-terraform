@@ -16,8 +16,8 @@ data "aws_ami" "app_ami" {
 
 resource "aws_instance" "web" {
   ami           = data.aws_ami.app_ami.id
-  subnet_id     = "vpc-01d6b9abd5b44fb03"
   instance_type = var.instance_type
+
 
   tags = {
     Name = "HelloWorld"
